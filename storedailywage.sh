@@ -1,7 +1,9 @@
 #! /bin/bash
 
-
-dailywage=$((20 * 8))
-totalwage=$((20 * $dailywage))
-TotalWage=$(($dailywage + $totalwage))
+wagesperhour=20
+totalhour=8
+dayspermonth=20
+dailywage=$(( $wagesperhour * $totalhour ))
+totalwage=$(( $dayspermonth * $dailywage ))
+TotalWage=$(( $dailywage + $totalwage ))
 echo "$TotalWage"
