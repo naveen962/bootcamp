@@ -1,6 +1,13 @@
 #! /bin/bash
 
-WageperHour=20
-TotalHour=8
-DailyWages=$(($WageperHour * $TotalHour))
-echo $DailyWages
+wageperhour=20
+totaltime=8
+attendance=$((RANDOM%2))
+if [[ $attendance == 0 ]]
+then 
+echo "present"
+	dailywages=$(( $wageperhour * $totaltime ))
+echo $dailywages
+else
+echo	"absent"
+fi 
