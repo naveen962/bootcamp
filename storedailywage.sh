@@ -1,9 +1,28 @@
 #! /bin/bash
 
-wagesperhour=20
-totalhour=8
+
+wageperhour=20
+totaltime=8
+parttime=4
+attendance=$((RANDOM%3))
 dayspermonth=20
-dailywage=$(( $wagesperhour * $totalhour ))
-totalwage=$(( $dayspermonth * $dailywage ))
-TotalWage=$(( $dailywage + $totalwage ))
-echo "$TotalWage"
+if [[ $attendance == 0 ]]
+then 
+	echo "fulltime"
+	dailywages=$(( $wageperhour * $totaltime ))
+	echo $dailywages
+Totalwage=$(( $dayspermonth * $dailywages ))
+
+ 	Totalwage=$(( $Totalwage + $dailywages ))
+echo "Totalwages :" $Totalwage
+elif [[ $attendance == 1 ]]
+then
+	echo "parttime"
+	dailywages=$(( $wageperhour * $parttime ))
+	echo $dailywages
+Totalwage=$(( $dayspermonth * $dailywages ))
+	 Totalwage=$(( $Totalwage + $dailywages ))
+	echo "Totalwages :" $Totalwage
+else
+	echo	"absent"
+fi 
